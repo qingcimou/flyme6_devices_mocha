@@ -1,0 +1,14 @@
+kernel=kernel
+ramdisk=RAMDISK
+dt=dt.img
+page_size=2048
+kernel_size=8334360
+ramdisk_size=1372433
+dtb_size=84648
+base_addr=0x10000000
+kernel_offset=0x00008000
+ramdisk_offset=0x02000000
+tags_offset=0x00000100
+cmd_line='androidboot.selinux=permissive androidboot.hardware=tn8 buildvariant=userdebug'
+board=""
+format=gzip
