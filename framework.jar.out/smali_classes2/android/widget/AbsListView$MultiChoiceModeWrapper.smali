@@ -92,17 +92,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 6442
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, v1}, Landroid/widget/AbsListView;->setLongClickable(Z)V
 
-    .line 6443
+    invoke-direct/range {p0 .. p1}, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->mzOnCreateActionMode(Landroid/view/ActionMode;)Z
+
     const/4 v0, 0x1
 
     return v0
 
-    .line 6445
     :cond_0
     return v1
 .end method
@@ -114,44 +113,38 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 6460
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->mWrapped:Landroid/widget/AbsListView$MultiChoiceModeListener;
 
     invoke-interface {v0, p1}, Landroid/widget/AbsListView$MultiChoiceModeListener;->onDestroyActionMode(Landroid/view/ActionMode;)V
 
-    .line 6461
+    invoke-direct/range {p0 .. p0}, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->mzOnDestroyActionMode()V
+
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/widget/AbsListView;->mChoiceActionMode:Landroid/view/ActionMode;
 
-    .line 6464
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->clearChoices()V
 
-    .line 6466
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
     iput-boolean v2, v0, Landroid/widget/AbsListView;->mDataChanged:Z
 
-    .line 6467
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->rememberSyncState()V
 
-    .line 6468
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0}, Landroid/widget/AbsListView;->requestLayout()V
 
-    .line 6470
     iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
 
     invoke-virtual {v0, v2}, Landroid/widget/AbsListView;->setLongClickable(Z)V
 
-    .line 6459
     return-void
 .end method
 
@@ -185,10 +178,8 @@
 
     if-nez v0, :cond_0
 
-    .line 6480
-    invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
+    #invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
 
-    .line 6475
     :cond_0
     return-void
 .end method
@@ -218,5 +209,30 @@
     iput-object p1, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->mWrapped:Landroid/widget/AbsListView$MultiChoiceModeListener;
 
     .line 6430
+    return-void
+.end method
+
+.method private mzOnCreateActionMode(Landroid/view/ActionMode;)Z
+    .locals 1
+    .param p1, "mode"    # Landroid/view/ActionMode;
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/AbsListView;->mzOnCreateActionMode(Landroid/view/ActionMode;)Z
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method private mzOnDestroyActionMode()V
+    .locals 1
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/AbsListView$MultiChoiceModeWrapper;->this$0:Landroid/widget/AbsListView;
+
+    invoke-virtual {v0}, Landroid/widget/AbsListView;->mzOnDestroyActionMode()V
+
     return-void
 .end method
