@@ -2585,7 +2585,9 @@
     <style name="Widget.DeviceDefault.ActionBar.TabBar" parent="@style/Widget.Material.ActionBar.TabBar" />
     <style name="Widget.DeviceDefault.ActionBar.Solid" parent="@style/Widget.Material.ActionBar.Solid" />
     <style name="Widget.DeviceDefault.Light" parent="@style/Widget.Material.Light" />
-    <style name="Widget.DeviceDefault.Light.Button" parent="@style/Widget.Material.Light.Button" />
+    <style name="Widget.DeviceDefault.Light.Button" parent="@style/Widget.Material.Light.Button">
+        <item name="stateListAnimator">@null</item>
+    </style>
     <style name="Widget.DeviceDefault.Light.Button.Small" parent="@style/Widget.Material.Light.Button.Small" />
     <style name="Widget.DeviceDefault.Light.Button.Inset" parent="@style/Widget.Material.Light.Button.Inset" />
     <style name="Widget.DeviceDefault.Light.Button.Toggle" parent="@style/Widget.Material.Light.Button.Toggle" />
@@ -2593,7 +2595,7 @@
     <style name="Widget.DeviceDefault.Light.TextView" parent="@style/Widget.Material.Light.TextView" />
     <style name="Widget.DeviceDefault.Light.AutoCompleteTextView" parent="@style/Widget.Material.Light.AutoCompleteTextView" />
     <style name="Widget.DeviceDefault.Light.CompoundButton.CheckBox" parent="@style/Widget.Material.Light.CompoundButton.CheckBox" />
-    <style name="Widget.DeviceDefault.Light.ListView.DropDown" parent="@style/Widget.Material.Light.ListView.DropDown" />
+    <style name="Widget.DeviceDefault.Light.ListView.DropDown" parent="@style/Widget.Material.Light.ListView" />
     <style name="Widget.DeviceDefault.Light.EditText" parent="@style/Widget.Material.Light.EditText" />
     <style name="Widget.DeviceDefault.Light.ExpandableListView" parent="@style/Widget.Material.Light.ExpandableListView" />
     <style name="Widget.DeviceDefault.Light.GridView" parent="@style/Widget.Material.Light.GridView" />
@@ -2628,14 +2630,28 @@
     <style name="Widget.DeviceDefault.Light.Tab" parent="@style/Widget.Material.Light.Tab" />
     <style name="Widget.DeviceDefault.Light.CalendarView" parent="@style/Widget.Material.Light.CalendarView" />
     <style name="Widget.DeviceDefault.Light.ActionButton" parent="@style/Widget.Material.Light.ActionButton" />
-    <style name="Widget.DeviceDefault.Light.ActionButton.Overflow" parent="@style/Widget.Material.Light.ActionButton.Overflow" />
-    <style name="Widget.DeviceDefault.Light.ActionMode" parent="@style/Widget.Material.Light.ActionMode" />
+    <style name="Widget.DeviceDefault.Light.ActionButton.Overflow" parent="@style/Widget.Material.Light.ActionButton.Overflow">
+        <item name="paddingStart">12.0dip</item>
+        <item name="paddingEnd">12.0dip</item>
+    </style>
+    <style name="Widget.DeviceDefault.Light.ActionMode" parent="@style/Widget.Material.Light.ActionMode">
+        <item name="background">@null</item>
+        <item name="backgroundSplit">@null</item>
+    </style>
     <style name="Widget.DeviceDefault.Light.ActionButton.CloseMode" parent="@style/Widget.Material.Light.ActionButton.CloseMode" />
-    <style name="Widget.DeviceDefault.Light.ActionBar" parent="@style/Widget.Material.Light.ActionBar" />
+    <style name="Widget.DeviceDefault.Light.ActionBar" parent="@style/Widget.Material.Light.ActionBar">
+        <item name="backgroundSplit">#ff181c1f</item>
+        <item name="elevation">0.0dip</item>
+    </style>
     <style name="Widget.DeviceDefault.Light.ActionBar.TabView" parent="@style/Widget.Material.Light.ActionBar.TabView" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabText" parent="@style/Widget.Material.Light.ActionBar.TabText" />
-    <style name="Widget.DeviceDefault.Light.ActionBar.TabBar" parent="@style/Widget.Material.Light.ActionBar.TabBar" />
-    <style name="Widget.DeviceDefault.Light.ActionBar.Solid" parent="@style/Widget.Material.Light.ActionBar.Solid" />
+    <style name="Widget.DeviceDefault.Light.ActionBar.TabBar" parent="@style/Widget.Material.Light.ActionBar.TabBar">
+        <item name="divider">@null</item>
+    </style>
+    <style name="Widget.DeviceDefault.Light.ActionBar.Solid" parent="@style/Widget.Material.Light.ActionBar.Solid">
+        <item name="backgroundSplit">#ff181c1f</item>
+        <item name="elevation">0.0dip</item>
+    </style>
     <style name="Widget.DeviceDefault.Light.ActionBar.Solid.Inverse" parent="@style/Widget.Holo.Light.ActionBar.Solid.Inverse" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabBar.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabBar.Inverse" />
     <style name="Widget.DeviceDefault.Light.ActionBar.TabView.Inverse" parent="@style/Widget.Holo.Light.ActionBar.TabView.Inverse" />
@@ -2664,7 +2680,9 @@
     <style name="TextAppearance.DeviceDefault.Widget.TextView.SpinnerItem" parent="@style/TextAppearance.Material.Widget.TextView.SpinnerItem" />
     <style name="TextAppearance.DeviceDefault.Widget.EditText" parent="@style/TextAppearance.Material.Widget.EditText" />
     <style name="TextAppearance.DeviceDefault.Widget.PopupMenu" parent="@style/TextAppearance.Material.Widget.PopupMenu" />
-    <style name="TextAppearance.DeviceDefault.Widget.PopupMenu.Large" parent="@style/TextAppearance.Material.Widget.PopupMenu.Large" />
+    <style name="TextAppearance.DeviceDefault.Widget.PopupMenu.Large" parent="@style/TextAppearance.Material.Widget.PopupMenu.Large">
+        <item name="textSize">18.0sp</item>
+    </style>
     <style name="TextAppearance.DeviceDefault.Widget.PopupMenu.Small" parent="@style/TextAppearance.Material.Widget.PopupMenu.Small" />
     <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Title" parent="@style/TextAppearance.Material.Widget.ActionBar.Title" />
     <style name="TextAppearance.DeviceDefault.Widget.ActionBar.Subtitle" parent="@style/TextAppearance.Material.Widget.ActionBar.Subtitle" />
@@ -2866,23 +2884,29 @@
         <item name="fontFamily">@string/font_family_menu_material</item>
     </style>
     <style name="TextAppearance.Material.Notification" parent="@style/TextAppearance.Material">
+        <item name="textAppearance">?textAppearanceSmall</item>
         <item name="textSize">@dimen/notification_text_size</item>
-        <item name="textColor">@color/secondary_text_material_light</item>
+        <item name="textStyle">normal</item>
+        <item name="textColor">#ffffffff</item>
     </style>
     <style name="TextAppearance.Material.Notification.Emphasis" parent="@style/TextAppearance.Material.Notification">
         <item name="textColor">#66000000</item>
     </style>
     <style name="TextAppearance.Material.Notification.Info" parent="@style/TextAppearance.Material.Notification">
         <item name="textSize">@dimen/notification_subtext_size</item>
-        <item name="textColor">@color/secondary_text_default_material_light</item>
+        <item name="textColor">#ff808080</item>
     </style>
     <style name="TextAppearance.Material.Notification.Line2" parent="@style/TextAppearance.Material.Notification">
         <item name="textSize">@dimen/notification_subtext_size</item>
     </style>
-    <style name="TextAppearance.Material.Notification.Time" parent="@style/TextAppearance.Material.Notification.Info" />
+    <style name="TextAppearance.Material.Notification.Time" parent="@style/TextAppearance.Material.Notification">
+        <item name="textSize">@dimen/notification_subtext_size</item>
+        <item name="textColor">#99ffffff</item>
+    </style>
     <style name="TextAppearance.Material.Notification.Title" parent="@style/TextAppearance.Material.Notification">
         <item name="textSize">@dimen/notification_title_text_size</item>
-        <item name="textColor">@color/primary_text_default_material_light</item>
+        <item name="textColor">#ffffffff</item>
+        <item name="fontFamily">sans-serif-medium</item>
     </style>
     <style name="TextAppearance.Material.SearchResult.Subtitle" parent="@style/TextAppearance.Material.Subhead" />
     <style name="TextAppearance.Material.SearchResult.Title" parent="@style/TextAppearance.Material.Title" />
@@ -3912,8 +3936,8 @@
         <item name="dropDownVerticalOffset">0.0dip</item>
         <item name="popupAnimationStyle">@empty</item>
         <item name="popupElevation">@dimen/floating_window_z</item>
-        <item name="popupEnterTransition">@transition/popup_window_enter</item>
-        <item name="popupExitTransition">@transition/popup_window_exit</item>
+        <item name="popupEnterTransition">@null</item>
+        <item name="popupExitTransition">@null</item>
     </style>
     <style name="Widget.Material.ListView" parent="@style/Widget.ListView">
         <item name="listSelector">?listChoiceBackgroundIndicator</item>
@@ -4122,7 +4146,10 @@
     <style name="Widget.Material.Light.ListView.DropDown" parent="@style/Widget.Material.ListView.DropDown" />
     <style name="Widget.Material.Light.MediaRouteButton" parent="@style/Widget.Material.MediaRouteButton" />
     <style name="Widget.Material.Light.PopupMenu" parent="@style/Widget.Material.ListPopupWindow" />
-    <style name="Widget.Material.Light.PopupMenu.Overflow" parent="@style/Widget.Material.PopupMenu.Overflow" />
+    <style name="Widget.Material.Light.PopupMenu.Overflow" parent="@style/Widget.Material.PopupMenu.Overflow">
+        <item name="popupAnimationStyle">@null</item>
+        <item name="overlapAnchor">false</item>
+    </style>
     <style name="Widget.Material.Light.PopupWindow" parent="@style/Widget.Material.PopupWindow" />
     <style name="Widget.Material.Light.ProgressBar" parent="@style/Widget.Material.ProgressBar" />
     <style name="Widget.Material.Light.ProgressBar.Horizontal" parent="@style/Widget.Material.ProgressBar.Horizontal" />
@@ -5834,6 +5861,7 @@
         <item name="windowNoTitle">true</item>
         <item name="windowIsTranslucent">true</item>
         <item name="windowContentOverlay">@null</item>
+        <item name="windowAnimationStyle">@style/Animation.BottomAnim</item>
         <item name="backgroundDimEnabled">true</item>
         <item name="listPreferredItemPaddingStart">?dialogPreferredPadding</item>
         <item name="listPreferredItemPaddingEnd">?dialogPreferredPadding</item>
@@ -6162,5 +6190,9 @@
         <item name="colorPrimary">@color/primary_material_settings</item>
         <item name="colorPrimaryDark">@color/primary_dark_material_settings</item>
         <item name="colorSecondary">@color/secondary_material_settings</item>
+    </style>
+    <style name="Animation.BottomAnim" parent="@style/Animation">
+        <item name="windowEnterAnimation">@anim/dock_bottom_enter</item>
+        <item name="windowExitAnimation">@anim/dock_bottom_exit</item>
     </style>
 </resources>

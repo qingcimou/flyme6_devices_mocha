@@ -3,7 +3,7 @@
 jarBaseName=$1
 tempSmaliDir=$2
 
-moveDirs=("android/accounts" "android/hardware" "android/printservice" "android/speech")
+moveDirs=("android/app" "android/media")
 
 if [ "$jarBaseName" = "framework" ];then
     echo ">>> in custom_jar $jarBaseName"

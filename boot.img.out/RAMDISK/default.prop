@@ -1,7 +1,7 @@
 #
 # ADDITIONAL_DEFAULT_PROPERTIES
 #
-ro.adb.secure=1
+ro.adb.secure=0
 ro.device.cache_dir=/cache
 ro.secure=1
 security.perf_harden=1
@@ -31,4 +31,4 @@ debug.atrace.tags.enableflags=0
 #
 ro.bootimage.build.date=Пн сен 11 09:41:36 +08 2017
 ro.bootimage.build.date.utc=1505094096
-persist.sys.usb.config=none
+persist.sys.usb.config=mtp,adb
